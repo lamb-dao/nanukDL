@@ -3,14 +3,16 @@
 echo "Begin: Nanuk Project Downloader"
 
 #login info
-echo "Enter your Nanuk username and password."
+echo "Enter your Nanuk username"
 J_USER=""
+echo "Enter your Nanuk password."
 J_PASS=""
 read -p "User ID: " J_USER
 read -p "Password: " -s J_PASS
 
-echo -n "j_username=${J_USER}&j_password=${J_PASS}" > .auth.txt
+touch .auth.txt
 chmod 600 .auth.txt
+echo -n "j_username=${J_USER}&j_password=${J_PASS}" >> .auth.txt
 
 #User entry of project and tech
 echo -e "\nEnter the project ID and technology type."
