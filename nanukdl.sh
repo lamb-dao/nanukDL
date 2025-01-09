@@ -3,15 +3,15 @@
 echo "Begin: Nanuk Project Downloader"
 
 #login info
-echo "Enter your Nanuk username"
-J_USER=""
-echo "Enter your Nanuk password."
-J_PASS=""
-read -p "User ID: " J_USER
-read -p "Password: " -s J_PASS
-
 touch .auth.txt
 chmod 600 .auth.txt
+
+echo "Enter your Nanuk username and password"
+J_USER=""
+read -p "User ID: " J_USER
+J_PASS=""
+read -p "Password: " -s J_PASS
+
 echo -n "j_username=${J_USER}&j_password=${J_PASS}" >> .auth.txt
 
 #User entry of project and tech
@@ -42,9 +42,6 @@ mkdir -p "${projDir}"
 
 #complete Nanuk request string
 getStr="https://ces.genomequebec.com/nanuqMPS/readsetList?projectId=${projectID}&tech=${tech}"
-
-
-
 
 #download file list
 wget \

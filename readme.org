@@ -1,0 +1,27 @@
+* nanuk project download utility
+
+* Purpose
+This Bash script automates the download of sequencing data files from the Nanuk
+genomics platform. Note: The script handles authentication securely
+
+* Requirements
+- Valid Nanuk account credentials
+
+* Usage
+Run the script in any dir =./nanukdl.sh=
+
+* Function
+1. Prompts for Nanuk username and password
+2. Requests project ID and technology type from the user
+3. Creates a directory for downloads
+4. Fetches a list of files to download from Nanuk
+5. Downloads all files in the list
+6. Provides instructions for downloading and verifying MD5 checksums
+
+* Output
+- Creates a directory named NanukDL<projectID>
+- Downloads project files into this directory
+- Generates log files:
+  - fileListDL.log: Log of file list download
+  - filesDL.log: Log of individual file downloads
+- Prints instructions for MD5 checksum verification
